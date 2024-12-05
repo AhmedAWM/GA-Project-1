@@ -1,0 +1,32 @@
+/*
+
+Colors will be used:
+Theme: #80a7ed
+Button Hover: #3a639b
+*/
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-size: 62.5%; /* This will be helpful in responsive pages when using 'rem' unit */
+}
+
+body {
+    font-family: "Rubik", system-ui, sans-serif;
+}
+
+/* Reusable classes */
+
+.box-button {
+    padding: 1rem 2rem;
+    border-radius: 9px;
+    color: white !important; /* Other style has priority so I had to use '!important' */
+    background-color: #80a7ed;
+}
+
+.box-button:hover {
+    background-color: #3a639b;
+}

@@ -1,32 +1,48 @@
 /*
 
 Colors will be used:
-Theme: #80a7ed
-Button Hover: #3a639b
+Light Blue: #80a7ed
+Darker Blue: #3a639b
 */
 
 * {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 html {
-    font-size: 62.5%; /* This will be helpful in responsive pages when using 'rem' unit */
+  font-size: 62.5%; /* This will be helpful in responsive pages when using 'rem' unit */
 }
 
 body {
-    font-family: "Rubik", system-ui, sans-serif;
+  font-family: "Rubik", system-ui, sans-serif;
 }
 
 /* Reusable classes */
 
+.container {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 0 3.2rem;
+}
+
 .box-button {
-    padding: 1rem 2rem;
-    border-radius: 9px;
-    color: white !important; /* Other style has priority so I had to use '!important' */
-    background-color: #80a7ed;
+  padding: 1rem 2rem;
+  border-radius: 9px;
+  color: white !important; /* Other style has priority so I had to use '!important' */
+  background-color: #3a639b;
 }
 
 .box-button:hover {
-    background-color: #3a639b;
+  background-color: #80a7ed;
+}
+
+.subheader {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #3a639b;
+  text-transform: uppercase;
+  margin: 0 0 1.6rem 0;
+  letter-spacing: 0.75px;
 }

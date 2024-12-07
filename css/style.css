@@ -84,3 +84,34 @@ Button: #3a639b
 .game {
   padding: 9.6rem 0;
 }
+
+.game .container {
+  display: flex;
+}
+
+.level-and-tries {
+  display: flex;
+  justify-content: space-between;
+}
+
+.letters {
+  width: 50%;
+}
+
+.letters input {
+  width: 12rem;
+  height: 12rem;
+  text-align: center;
+  font-size: 8rem;
+  border-radius: 8px;
+  border: 1px #3a639b solid;
+  margin: 0.4rem;
+}
+
+.letters input:focus {
+  outline: none;
+}
+
+.figure {
+  width: 50%;
+}

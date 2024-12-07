@@ -20,7 +20,7 @@ body {
 
 /* Reusable classes */
 
-.container {
+.container, .game {
   max-width: 120rem;
   margin: 0 auto;
   padding: 0 3.2rem;
@@ -45,4 +45,11 @@ body {
   text-transform: uppercase;
   margin: 0 0 1.6rem 0;
   letter-spacing: 0.75px;
+}
+
+.subheader-h3 {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin: 0 0 3.2rem 0;
+  text-transform: capitalize;
 }

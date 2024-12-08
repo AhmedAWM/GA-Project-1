@@ -99,17 +99,21 @@ Button: #3a639b
 }
 
 .letters input {
+  box-sizing: border-box;          /* ---------------------------------------------------------------------------------------------------- */
+  -moz-box-sizing: border-box;     /* This will make the border inside the div, so it will not mess up the look, for all types of browsers */
+  -webkit-box-sizing: border-box;  /* ---------------------------------------------------------------------------------------------------- */
   width: 12rem;
   height: 12rem;
   text-align: center;
   font-size: 8rem;
   border-radius: 8px;
   border: 1px #3a639b solid;
-  margin: 0.4rem;
+  margin: 0.6rem;
 }
 
 .letters input:focus {
   outline: none;
+  border: 0.3rem solid #3a639b;
 }
 
 .figure {

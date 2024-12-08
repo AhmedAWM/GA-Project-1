@@ -13,6 +13,7 @@ let normalWord = normal[Math.floor(Math.random() * 15)]; // Get random Normal wo
 let hardWord = hard[Math.floor(Math.random() * 15)]; // Get random Hard word
 let triesCount = 0; // Tries counter depending on the lever and word length
 let letterInputsElements; // All the 'input' elements of the word will be stored in this variable
+let isWinner = false;
 
 // -------------------------- Main code -------------------------- //
 // Getting a random word with random level
@@ -42,11 +43,19 @@ letterInputsElements.forEach((input) => {
     if(input.value === '') { // When the player deletes a wrong letter
       console.log("Nothing there!");
     } else if(input.value === 'h') { // When the user puts a correct letter it should disable that field to lock the correct answer
+      input.disabled = true;
       console.log("That's correct!");
     } else {
       console.log("That's incorrect!");
     }
   });
+
+
+  if(checkWinner()) {
+    console.log("There is a winner");
+  } else {
+    console.log("There is no winner yet");
+  }
 });
 
 // -------------------------- Functions -------------------------- //

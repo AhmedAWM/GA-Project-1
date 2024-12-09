@@ -53,3 +53,56 @@ body {
   margin: 0 0 3.2rem 0;
   text-transform: capitalize;
 }
+
+.no-shadow-button {
+  border: none;
+}
+
+/* Hangman parts */
+.rope {
+  
+}
+
+.figure-head {
+  
+}
+
+.figure-body {
+  
+}
+
+.left-arm, .right-arm, .left-leg, .right-leg {
+  position: relative; /* Position of the line is relative to the parent, not to the whole page */
+}
+
+.left-arm::after, .left-leg::after {
+  content: ''; 
+  height: 2px;
+  width: 50%;
+  background-color: black;
+  position: absolute;
+  left: 99%;
+  top: 0; 
+  transform: rotate(135deg);
+  transform-origin: 1px 1px;
+}
+
+.right-arm::after, .right-leg::after {
+  content: ''; 
+  height: 2px;
+  width: 50%;
+  background-color: black;
+  position: absolute;
+  left: -1px;
+  top: 0; 
+  transform: rotate(45deg);
+  transform-origin: 1px 1px;
+}
+
+.border-left {
+  border-left: 0.1rem solid #000000;
+}
+
+.border-right {
+  border-right: 0.1rem solid #000000;
+}

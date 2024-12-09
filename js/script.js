@@ -5,61 +5,97 @@ const wordLevelTextElement = document.querySelector(".word-level-text");
 const wordTypeElement = document.querySelector("#word-type");
 const triesCountElement = document.querySelector("#tries");
 const lettersDivElement = document.querySelector('.letters');
+const playAgainButtonElement = document.querySelector('#play-again-button');
+const hangmanButtonElement = document.querySelector('#draw-hangman'); // Hangman draw button for testing
+
+// Hangman figure elements (as for the rope or body, no need for element constants)
+const ropeElement1 = document.querySelector('.c1-r1');
+const ropeElement2 = document.querySelector('.c2-r1');
+const bodyElement1 = document.querySelector('.c1-r3');
+const bodyElement2 = document.querySelector('.c2-r3');
+const bodyElement3 = document.querySelector('.c1-r4');
+const bodyElement4 = document.querySelector('.c2-r4');
+const leftArmElement = document.querySelector('.c1-r3');
+const rightArmElement = document.querySelector('.c2-r3');
+const leftLegElement = document.querySelector('.c1-r5');
+const rightLegElement = document.querySelector('.c2-r5');
 
 // -------------------------- Variables -------------------------- //
 let randomWordIndex = Math.floor(Math.random() * level.length); // Get random index for the level difficulty
 let easyWord = easy[Math.floor(Math.random() * 15)]; // Get random Easy word
 let normalWord = normal[Math.floor(Math.random() * 15)]; // Get random Normal word
 let hardWord = hard[Math.floor(Math.random() * 15)]; // Get random Hard word
-let triesCount = 0; // Tries counter depending on the lever and word length
+let triesCount = 7; // Tries counter depending on the lever and word length
 let letterInputsElements; // All the 'input' elements of the word will be stored in this variable
 let isWinner = false;
+let isLoser = false;
 
 // -------------------------- Main code -------------------------- //
+//Initialize the game
+init();
+
 // Getting a random word with random level
 if (randomWordIndex === 0) { // Easy
   wordLevelTextElement.textContent = "word level: easy";
   wordTypeElement.textContent = easyWord.type;
   putLetters(easyWord.word.length); // Call the function responsible of displaying the amount of letters depending on the word length
-  triesCount = easyWord.word.length + 7; // Number of tries is the length of the word + 7 more tries for Easy words
+  console.log(easyWord.word); // Display the word in colsole for testing purposes
 } else if (randomWordIndex === 1) { // Normal
   wordLevelTextElement.textContent = "word level: normal";
   wordTypeElement.textContent = normalWord.type;
   putLetters(normalWord.word.length); // Call the function responsible of displaying the amount of letters depending on the word length
-  triesCount = normalWord.word.length + 5; // Number of tries is the length of the word + 5 more tries for Normal words
+  console.log(normalWord.word); // Display the word in colsole for testing purposes
 } else { // Hard
   wordLevelTextElement.textContent = "word level: hard";
   wordTypeElement.textContent = hardWord.type;
   putLetters(hardWord.word.length); // Call the function responsible of displaying the amount of letters depending on the word length
-  triesCount = hardWord.word.length + 3; // Number of tries is the length of the word + 3 more tries Hard words
+  console.log(hardWord.word); // Display the word in colsole for testing purposes
 }
 
-//Initialize the game
-init();
-
 // ----------------------- Event Listeners ----------------------- //
-letterInputsElements.forEach((input) => {
-  input.addEventListener("input", (event) => { // When pressing a letter it should check if the letter is correct or not
-    if(input.value === '') { // When the player deletes a wrong letter
+// Checking of the letter entered is correct or not with keypress event listener
+letterInputsElements.forEach((letter) => {
+  letter.addEventListener("input", (event) => { // When pressing a letter it should check if the letter is correct or not
+    if(letter.value === '') { // When the player deletes a wrong letter
       console.log("Nothing there!");
-    } else if(input.value === 'h') { // When the user puts a correct letter it should disable that field to lock the correct answer
-      input.disabled = true;
+    } else if(letter.value === 'h') { // When the user puts a correct letter it should disable that field to lock the correct answer
+      letter.disabled = true;
       console.log("That's correct!");
     } else {
+      updateTries(--triesCount);
       console.log("That's incorrect!");
     }
   });
 
+  // Play again button will refresh the page so the player gets a new word
+  playAgainButtonElement.addEventListener('click', () => {
+    window.location.reload();
+  });
 
-  if(checkWinner()) {
-    console.log("There is a winner");
-  } else {
-    console.log("There is no winner yet");
-  }
+  // Testing how to draw a hangman button
+  hangmanButtonElement.addEventListener('click', () => {
+    ropeElement1.classList.add('border-right');
+    ropeElement2.classList.add('border-left');
+    leftArmElement.classList.add('left-arm');
+    rightArmElement.classList.add('right-arm');
+    leftLegElement.classList.add('left-leg');
+    rightLegElement.classList.add('right-leg');
+    bodyElement1.classList.add('border-right');
+    bodyElement2.classList.add('border-left');
+    bodyElement3.classList.add('border-right');
+    bodyElement4.classList.add('border-left');
+  });
+
+  // if(checkWinner()) {
+  //   console.log("There is a winner");
+  // } else {
+  //   console.log("There is no winner yet");
+  // }
 });
 
 // -------------------------- Functions -------------------------- //
 function init() {
+  triesCount = 7;
   triesCountElement.textContent = `Tries left: ${triesCount}`;
 }
 
@@ -74,4 +110,16 @@ function putLetters(wordLength) {
 
   letterInputsElements = document.querySelectorAll('input'); // Get all the letter input elements
   console.log();
+}
+
+function updateTries(triesLeft) {
+  if(triesCount === 0) {
+    // Loser
+    letterInputsElements.forEach((input) => {
+      input.disabled = true;
+      input.style.border = '0.3rem solid red';
+    });
+  }
+
+  triesCountElement.textContent = `Tries left: ${triesCount}`;
 }

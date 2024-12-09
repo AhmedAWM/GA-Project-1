@@ -99,9 +99,9 @@ Button: #3a639b
 }
 
 .letters input {
-  box-sizing: border-box;          /* ---------------------------------------------------------------------------------------------------- */
-  -moz-box-sizing: border-box;     /* This will make the border inside the div, so it will not mess up the look, for all types of browsers */
-  -webkit-box-sizing: border-box;  /* ---------------------------------------------------------------------------------------------------- */
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   width: 12rem;
   height: 12rem;
   text-align: center;
@@ -126,7 +126,8 @@ Button: #3a639b
   justify-content: center;
 }
 
-.c1, .c2 {
+.c1,
+.c2 {
   display: flex;
   flex-direction: column;
 }
@@ -136,35 +137,22 @@ Button: #3a639b
 }
 
 .cell {
-  padding: 2.4rem 4.8rem;
+  height: 6.4rem;
+  width: 14.4rem;
+
+  /* This will make the border inside the div, so it will not mess up the look, for all types of browsers */
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  /* ---------------------------------------------------------------------------------------------------- */
 }
 
-.c1-r1, .c2-r1 {
+.c1-r1 {
   border-top: 0.2rem solid #000000;
 }
 
-/* .c1-r1 {
-  border-right: 0.1rem solid #000000;
-} */
-
-/* .c2-r1 {
-  border-left: 0.1rem solid #000000;
-} */
-
-/* .c1-r3, .c1-r4 {
-  border-right: 0.1rem solid #000000;
-}
-
-.c2-r3, .c2-r4 {
-  border-left: 0.1rem solid #000000;
-} */
-
-
-
-
-
-
-.c1-r6, .c2-r6 {
+.c1-r6,
+.c2-r6 {
   border-bottom: 0.2rem solid #000000;
 }
 

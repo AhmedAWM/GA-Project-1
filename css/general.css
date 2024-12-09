@@ -20,7 +20,8 @@ body {
 
 /* Reusable classes */
 
-.container, .game {
+.container,
+.game {
   max-width: 120rem;
   margin: 0 auto;
   padding: 0 3.2rem;
@@ -60,41 +61,49 @@ body {
 
 /* Hangman parts */
 .rope {
-  
 }
 
 .figure-head {
-  
+  position: relative;
+  height: 96%;
+  width: 50%;
+  border: 0.2rem solid #000000;
+  border-radius: 100%;
+  left: 75%;
 }
 
 .figure-body {
-  
 }
 
-.left-arm, .right-arm, .left-leg, .right-leg {
+.left-arm,
+.right-arm,
+.left-leg,
+.right-leg {
   position: relative; /* Position of the line is relative to the parent, not to the whole page */
 }
 
-.left-arm::after, .left-leg::after {
-  content: ''; 
+.left-arm::after,
+.left-leg::after {
+  content: "";
   height: 2px;
   width: 50%;
   background-color: black;
   position: absolute;
   left: 99%;
-  top: 0; 
+  top: 0;
   transform: rotate(135deg);
   transform-origin: 1px 1px;
 }
 
-.right-arm::after, .right-leg::after {
-  content: ''; 
+.right-arm::after,
+.right-leg::after {
+  content: "";
   height: 2px;
   width: 50%;
   background-color: black;
   position: absolute;
   left: -1px;
-  top: 0; 
+  top: 0;
   transform: rotate(45deg);
   transform-origin: 1px 1px;
 }

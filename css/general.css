@@ -60,9 +60,6 @@ body {
 }
 
 /* Hangman parts */
-.rope {
-}
-
 .figure-head {
   position: relative;
   height: 96%;
@@ -70,9 +67,6 @@ body {
   border: 0.2rem solid #000000;
   border-radius: 100%;
   left: 75%;
-}
-
-.figure-body {
 }
 
 .left-arm,

@@ -182,6 +182,11 @@ function updateTries(triesLeft) { // Update tries counter and check for losing
       key.disabled = true;
     });
 
+    // Solving the puzzle
+    for(let i = 0; i < wordArray.length; ++i) {
+      letterInputsElements[i].value = wordArray[i];
+    }
+
     winLoseElement.textContent = 'You lost!'  // Adding a text for losing
     winLoseElement.style.color = 'red' // Losing text in red
   }

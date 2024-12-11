@@ -39,7 +39,7 @@ const normal = [
 const hard = [
     {type: 'animals', word: 'squirrel'},
     {type: 'animals', word: 'falmingo'},
-    {type: 'animals', word: 'chrocodile'},
+    {type: 'animals', word: 'crocodile'},
     {type: 'animals', word: 'hedgehog'},
     {type: 'animals', word: 'starfish'},
     {type: 'food', word: 'eggplant'},

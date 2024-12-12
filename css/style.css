@@ -82,11 +82,12 @@ Button: #3a639b
 }
 
 .game {
-  padding: 9.6rem 0 4.8rem 0;
+  margin-top: 4.8rem;
 }
 
 .game .container {
-  display: flex;
+  display: grid; /* Using grid to split the container */
+  grid-template-columns: 2fr 1fr; /* First part is taking 2/3 of the page, and the second part 1/3 */
 }
 
 .level-and-tries {
@@ -94,30 +95,52 @@ Button: #3a639b
   justify-content: space-between;
 }
 
-.letters {
-  width: 50%;
+.input {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
 }
 
-.letters input {
+.input input {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  width: 8rem;
-  height: 8rem;
+  width: 4.8rem;
+  height: 4.8rem;
   text-align: center;
-  font-size: 6rem;
+  font-size: 3.2rem;
   border-radius: 8px;
   border: 1px #3a639b solid;
   margin: 0.6rem;
 }
 
-.letters input:focus {
+.input input:focus {
   outline: none;
   border: 0.3rem solid #3a639b;
 }
 
-.figure {
-  width: 50%;
+.keyboard {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  width: 90%;
+  margin: 0 auto;
+  position: relative;
+  justify-content: center;
+}
+
+.keyboard button {
+  height: 4.8rem;
+  width: 4.8rem;
+  align-content: center;
+  font-size: 3.2rem;
+  font-weight: 500;
+  text-align: center;
+  background-color: #FFFFFF;
+  border: 0.1rem solid #3a639b;
+  border-radius: 0.4rem;
+
 }
 
 .figure-container {
@@ -166,29 +189,29 @@ Button: #3a639b
   font-size: 3.2rem;
 }
 
-.keyboard {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-  width: 50%;
-  margin: 0 auto 4.8rem auto;
-  justify-content: center;
-}
-
-.keyboard button {
-  height: 4.8rem;
-  width: 4.8rem;
-  align-content: center;
-  font-size: 3.2rem;
-  font-weight: 500;
-  text-align: center;
-  background-color: #FFFFFF;
-  border: 0.1rem solid #3a639b;
-  border-radius: 0.4rem;
-
-}
-
 .game-controls {
-  margin: 2.4rem 0;
+  margin: 1.8rem 0 2.4rem 0;
   text-align: center;
+}
+
+.footer {
+  display: grid; /* Using grid to split the footer */
+  column-gap: 6.4rem;
+  row-gap: 9.6rem;
+  grid-template-columns: 1.5fr 1.5fr 1fr 1fr 1fr;
+  max-width: 120rem;
+  padding: 9.6rem 3.2rem;
+  margin: 0 auto;
+  border-top: 1px solid #eee;
+  font-size: 1.6rem;
+  line-height: 1.6;
+}
+
+.logo-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.address {
+  margin-bottom: 2.4rem
 }

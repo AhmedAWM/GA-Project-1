@@ -5,7 +5,6 @@ const wordLevelTextElement = document.querySelector(".word-level-text");
 const wordTypeElement = document.querySelector("#word-type");
 const triesCountElement = document.querySelector("#tries");
 const lettersDivElement = document.querySelector(".letters");
-const playAgainButtonElement = document.querySelector("#play-again-button");
 const hangmanButtonElement = document.querySelector("#draw-hangman"); // Hangman draw button for testing
 const winLoseElement = document.querySelector('.win-lose-text');
 const keyboard = document.querySelectorAll('.key');
@@ -97,11 +96,6 @@ keyboard.forEach((key) => {
 
     console.log(event.target.textContent);
   });
-});
-
-// Play again button will refresh the page so the player gets a new word
-playAgainButtonElement.addEventListener("click", () => {
-  window.location.reload();
 });
 
 // -------------------------- Functions -------------------------- //

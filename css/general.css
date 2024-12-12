@@ -18,6 +18,10 @@ body {
   font-family: "Rubik", system-ui, sans-serif;
 }
 
+address {
+  font-style: normal;
+}
+
 /* Reusable classes */
 
 .container,
@@ -53,10 +57,6 @@ body {
   line-height: 1.2;
   margin: 0 0 3.2rem 0;
   text-transform: capitalize;
-}
-
-.no-shadow-button {
-  border: none;
 }
 
 /* Hangman parts */
@@ -108,4 +108,14 @@ body {
 
 .border-right {
   border-right: 0.1rem solid #000000;
+}
+
+.footer-heading {
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-bottom: 4rem;
+}
+
+.footer-link {
+  text-decoration: none;
 }

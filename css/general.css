@@ -114,8 +114,14 @@ address {
   font-size: 1.8rem;
   font-weight: 500;
   margin-bottom: 4rem;
+  color: #555657;
 }
 
 .footer-link {
   text-decoration: none;
+  color: #737577;
+}
+
+.contacts {
+  color: #737577;
 }

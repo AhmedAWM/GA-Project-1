@@ -81,6 +81,76 @@ Button: #3a639b
   height: 46rem;
 }
 
+.contact-us-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  border-radius: 1.1rem;
+  background-color: #3a639b;
+  color: #FFFFFF;
+  padding: 0;
+  margin-bottom: 4.6rem;
+}
+
+.contact-us-container img {
+  max-height: 52rem;
+  border-radius: 0 1.1rem 1.1rem 0;
+}
+
+.contact-us-box {
+  padding: 4.8rem 6.4rem 6.4rem 6.4rem;
+}
+
+.contact-us-box h2 {
+  margin-bottom: 3.2rem;
+  font-size: 4.4rem;
+  line-height: 1.2;
+}
+
+.contact-us-box p {
+  font-size: 1.8rem;
+  line-height: 1.8;
+  margin-bottom: 4.8rem;
+}
+
+.contact-us-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.contact-us-inputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 6.4rem;
+  row-gap: 2.4rem;
+}
+
+.contact-us-form label {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-bottom: 1.2rem;
+}
+
+.contact-us-form input {
+  width: 100%;
+  padding: 1.2rem;
+  font-size: 1.8rem;
+  font-family: inherit;
+  border-radius: 9px;
+  border: 0;
+}
+
+.contact-us-form input {
+  outline: none; /* No borders or outline when focus */
+}
+
+.contact-us-form textarea {
+  height: 100%;
+  width: 100%;
+  resize: none;
+}
+
 .game {
   margin-top: 4.8rem;
 }
@@ -116,7 +186,7 @@ Button: #3a639b
 }
 
 .input input:focus {
-  outline: none;
+  outline: none; /* No borders or outline when focus */
   border: 0.3rem solid #3a639b;
 }
 
@@ -218,6 +288,13 @@ Button: #3a639b
 .logo-column {
   display: flex;
   flex-direction: column;
+}
+
+.copyright {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  color: #767676;
+  margin-top: auto;
 }
 
 .address {

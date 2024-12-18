@@ -7,8 +7,8 @@
     <title>Welcome to Hangman!</title>
 
     <!-- Styles -->
-    <link rel="stylesheet" href="./css/general.css" />
     <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/responsive.css" />
 
     <!-- Scripts -->
     <script defer src="./js/script.js"></script>
@@ -33,13 +33,11 @@
           <li>
             <a href="./index.html" class="main-nav-link current-page">Home</a>
           </li>
-          <li><a href="#" class="main-nav-link">How to play?</a></li>
-          <li><a href="#" class="main-nav-link">About</a></li>
+          <li><a href="#footer" class="main-nav-link">How to play?</a></li>
+          <li><a href="#footer" class="main-nav-link">About</a></li>
           <li><a href="#contact" class="main-nav-link">Contact us</a></li>
           <li>
-            <a href="./game.html" class="main-nav-link box-button"
-              >Play now</a
-            >
+            <a href="./game.html" class="main-nav-link box-button">Play now</a>
           </li>
         </ul>
       </nav>
@@ -74,15 +72,16 @@
             <div class="contact-us-inputs">
               <div>
                 <label for="full-name">Full Name</label>
-                <input type="text" name="full-name" id="full-name" placeholder="Ahmed Abdulwahab">
+                <input type="text" name="full-name" id="full-name" placeholder="e.g. Ahmed Abdulwahab">
               </div>
               <div>
                 <label for="email">Email address</label>
-                <input type="text" name="email" id="email" placeholder="ahmed@email.com">
+                <input type="text" name="email" id="email" placeholder="e.g. ahmed@email.com">
               </div>
             </div>
-            <div>
-              <textarea type="text" name="message" id="message" placeholder="Enter your message"></textarea>
+            <div class="message-box">
+              <textarea type="text" name="message" id="message" placeholder="Enter your message" rows="5"></textarea>
+              <a href="./game.html" class="main-nav-link box-button-white">Submit</a>
             </div>
           </div>
         </div>

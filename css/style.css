@@ -1,9 +1,32 @@
 /*
 
 Colors will be used:
-Theme: #80a7ed
-Button: #3a639b
+Light Blue: #80a7ed
+Darker Blue: #3a639b
+Grey: ##555657
+Lighter grey: #767676
 */
+
+/*********************************** HTML elements ***********************************/
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%; /* This will be helpful in responsive pages when using 'rem' unit */
+}
+
+body {
+  font-family: "Rubik", system-ui, sans-serif;
+}
+
+address {
+  font-style: normal;
+}
+
+/*********************************** My classes ***********************************/
 
 .header {
   display: flex;
@@ -109,7 +132,6 @@ Button: #3a639b
 .contact-us-box p {
   font-size: 1.8rem;
   line-height: 1.8;
-  margin-bottom: 4.8rem;
 }
 
 .contact-us-form {
@@ -149,6 +171,13 @@ Button: #3a639b
   height: 100%;
   width: 100%;
   resize: none;
+}
+
+.message-box {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+  align-items: center;
 }
 
 .game {
@@ -233,11 +262,12 @@ Button: #3a639b
   height: 6.4rem;
   width: 14.4rem;
 
-  /* This will make the border inside the div, so it will not mess up the look, for all types of browsers */
+  /* This will make the border inside the div,
+  so it will not mess up the look, for all types of browsers */
   box-sizing: border-box;
   -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  /* ---------------------------------------------------------------------------------------------------- */
+  -webkit-box-sizing: border-box
+  /* ------------------------------------------------------- */
 }
 
 .c1-r1 {
@@ -299,4 +329,120 @@ Button: #3a639b
 
 .address {
   margin-bottom: 2.4rem
+}
+
+/*********************************** Reusable classes ***********************************/
+
+.container,
+.game {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 0 3.2rem;
+}
+
+.box-button {
+  padding: 1rem 2rem;
+  border-radius: 9px;
+  color: #FFFFFF !important; /* Other style has priority so I had to use '!important' */
+  background-color: #3a639b;
+}
+
+.box-button:hover {
+  background-color: #80a7ed;
+}
+
+.box-button-white {
+  margin-top: 1.4rem;
+  padding: 1rem 2rem;
+  border-radius: 9px;
+  color: #3a639b !important; /* Other style has priority so I had to use '!important' */
+  background-color: #FFFFFF;
+}
+
+.box-button-white:hover {
+  color: #80a7ed !important; /* Other style has priority so I had to use '!important' */
+}
+
+.subheader {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #3a639b;
+  text-transform: uppercase;
+  margin: 0 0 1.6rem 0;
+  letter-spacing: 0.75px;
+}
+
+.subheader-h3 {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin: 0 0 3.2rem 0;
+  text-transform: capitalize;
+}
+
+/* Hangman parts */
+.figure-head {
+  position: relative;
+  height: 96%;
+  width: 50%;
+  border: 0.2rem solid #000000;
+  border-radius: 100%;
+  left: 75%;
+}
+
+.left-arm,
+.right-arm,
+.left-leg,
+.right-leg {
+  position: relative; /* Position of the line is relative to the parent, not to the whole page */
+}
+
+.left-arm::after,
+.left-leg::after {
+  content: "";
+  height: 2px;
+  width: 50%;
+  background-color: #000000;
+  position: absolute;
+  left: 99%;
+  top: 0;
+  transform: rotate(135deg);
+  transform-origin: 1px 1px;
+}
+
+.right-arm::after,
+.right-leg::after {
+  content: "";
+  height: 2px;
+  width: 50%;
+  background-color: #000000;
+  position: absolute;
+  left: -1px;
+  top: 0;
+  transform: rotate(45deg);
+  transform-origin: 1px 1px;
+}
+
+.border-left {
+  border-left: 0.1rem solid #000000;
+}
+
+.border-right {
+  border-right: 0.1rem solid #000000;
+}
+
+.footer-heading {
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-bottom: 4rem;
+  color: #555657;
+}
+
+.footer-link {
+  text-decoration: none;
+  color: #767676;
+}
+
+.contacts {
+  color: #767676;
 }
